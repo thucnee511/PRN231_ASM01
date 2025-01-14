@@ -3,7 +3,7 @@
    "ContextClassName": "NET1720_RPR231_PRJ_G2_SkincareBookingSystemContext",
    "ContextNamespace": null,
    "FilterSchemas": false,
-   "IncludeConnectionString": false,
+   "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
    "OutputPath": "Models",

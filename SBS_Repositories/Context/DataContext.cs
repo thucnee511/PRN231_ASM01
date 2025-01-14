@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SBS_Repositories.Models;
 
-namespace SBS_Repositories.DBContext;
+namespace SBS_Repositories.Context;
 
 public partial class DataContext : DbContext
 {
@@ -28,8 +30,7 @@ public partial class DataContext : DbContext
             .AddJsonFile("appsettings.json")
             .Build();
 
-        string connectionString = config.GetConnectionString(connectionStringName);
-        return connectionString;
+        return config.GetConnectionString(connectionStringName);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

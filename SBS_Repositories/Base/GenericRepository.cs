@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SBS_Repositories.DBContext;
+using SBS_Repositories.Context;
 using System.Reflection.Metadata.Ecma335;
 
 namespace SBS_Repositories.Base
