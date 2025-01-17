@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace SBS_Repositories.Models;
@@ -27,6 +28,7 @@ public partial class OrderDetail
 
     public double UnitPrice { get; set; }
 
+    [JsonIgnore]
     [ForeignKey("OrderId")]
     [InverseProperty("OrderDetails")]
     public virtual Order Order { get; set; }

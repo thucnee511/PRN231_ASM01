@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace SBS_Repositories.Models;
@@ -61,9 +62,11 @@ public partial class UserAccount
 
     public bool IsActive { get; set; }
 
+    [JsonIgnore]
     [InverseProperty("Customer")]
     public virtual ICollection<Order> OrderCustomers { get; set; } = new List<Order>();
 
+    [JsonIgnore]
     [InverseProperty("Employee")]
     public virtual ICollection<Order> OrderEmployees { get; set; } = new List<Order>();
 }

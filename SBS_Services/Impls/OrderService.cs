@@ -23,6 +23,9 @@ public class OrderService : IOrderService
     public async Task<int> Insert(Order order)
         => await _orderRepository.InsertAsync(order);
 
-    public Task<int> Update(Order order)
-        => _orderRepository.UpdateAsync(order);
+    public async Task<List<Order>> Search(string noteHolder, double minValue, double maxValue, string serviceNameHolder)
+        => await _orderRepository.Search(noteHolder, minValue, maxValue, serviceNameHolder);
+
+    public async Task<int> Update(Order order)
+        => await _orderRepository.UpdateAsync(order);
 }

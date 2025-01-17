@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace SBS_Repositories.Models;
@@ -42,10 +43,12 @@ public partial class Order
     [Column(TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }
 
+    [JsonIgnore]
     [ForeignKey("CustomerId")]
     [InverseProperty("OrderCustomers")]
     public virtual UserAccount Customer { get; set; }
 
+    [JsonIgnore]
     [ForeignKey("EmployeeId")]
     [InverseProperty("OrderEmployees")]
     public virtual UserAccount Employee { get; set; }

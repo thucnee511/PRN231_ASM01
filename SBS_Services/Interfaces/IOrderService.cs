@@ -10,4 +10,6 @@ public interface IOrderService
     Task<int> Insert(Order order);
     Task<int> Update(Order order);
     Task<int> Delete(Order order);
+
+    Task<List<Order>> Search(string noteHolder, double minValue, double maxValue, string serviceNameHolder);
 }
